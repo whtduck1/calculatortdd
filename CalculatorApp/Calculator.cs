@@ -13,11 +13,13 @@ public class Calculator
     public double Multiply(double a, double b)
     {
         return a * b;
-    } 
-    public double Divide (double a, double b) {
+    }
+    public double Divide(double a, double b)
+    {
         if (b == 0)
         {
-            throw new ArgumentException("Division by 0 is not allowed.");
+            throw new ArgumentException("Division by zero is not allowed.");
         }
         return a / b;
     }
+}

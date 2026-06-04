@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using CalculatorApp
+using CalculatorApp;
 
 namespace CalculatorApp.Tests;
 
@@ -29,7 +29,7 @@ public class CalculatorTests
     {
         var calculator = new Calculator();
         double result = calculator.Subtract(3, 2);
-        Assert.Equal(1.5, result);
+        Assert.Equal(1, result);
     }
     [Fact]
     public void ShouldMultiplyTwoNumbers()
@@ -41,8 +41,7 @@ public class CalculatorTests
     [Fact]
     public void ShouldThrowExceptionWhenDividingByZero()
     {
-        var calculator = new Calculator();
-        Assert.Throws<DivideByZeroException>(() => calculator.Divide(4, 0));
+        var exception = Assert.Throws<ArgumentException>(() => _calculator.Divide(4, 0));
         Assert.Equal("Division by zero is not allowed.", exception.Message);
     }
 }
